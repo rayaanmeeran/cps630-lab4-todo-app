@@ -103,7 +103,7 @@ export class AppComponent {
           var file = e.dataTransfer.items[0].getAsFile();
 
           let fileReader = new FileReader();
-          fileReader.onload = (e) => {
+          fileReader.onload = (ev) => {
             let newJSONString = fileReader.result.toString(); // Changing the file data to a String
             console.log(newJSONString);
             let newJSONObj = JSON.parse(newJSONString); // Parsing the String 
