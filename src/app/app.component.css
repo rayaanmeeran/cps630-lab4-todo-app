@@ -1,0 +1,29 @@
+header {
+    text-align: center;
+    background-size: 26%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    min-width: 400px;
+    overflow: hidden;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 70px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    text-shadow: 4px 3px 0px #7a7a7a;
+}
+
+.drop-box {
+    background-image: url("/assets/img/stripes-light.png");
+}
+
+.dark-paths {
+    background-image: url("/assets/img/dark-paths.png");
+}
+
+.dark-paths-lighter {
+    background-image: url("/assets/img/dark-paths-lighter.png");
+}

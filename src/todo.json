@@ -1,0 +1,23 @@
+{
+    "todo": [{
+        "task": "Buy Oranges",
+        "complete": false,
+        "description": "Buy oranges from the grocery store."
+    }, {
+        "task": "Buy Grapes",
+        "complete": false,
+        "description": "Buy grapes from the grocery store."
+    }, {
+        "task": "Fix Door Handle",
+        "complete": false,
+        "description": "Fix my room's door handle."
+    }, {
+        "task": "Clean House",
+        "complete": false,
+        "description": "Vacuum and clean the house."
+    }, {
+        "task": "Finish Assignment",
+        "complete": false,
+        "description": "Finish CPS 630 assignment."
+    }]
+}

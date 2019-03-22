@@ -1,20 +1,53 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header class="page-header dark-paths-lighter">
+    <div class="container">
+        <h1 class="py-9 text-center text-light">{{ title }}</h1>
+    </div>
+</header>
 
+<div class="container">
+    <div class=" my-3 row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="addTitleInput">Add A Title</label>
+                <input type="text" class="form-control" id="addTitleInput" placeholder="Add title... (required)" #createTitle>
+                <label for="addTaskInput">Description</label>
+                <input type="text" class="form-control" id="addTaskInput" placeholder="Add task..." #createTodo>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="addTodo(createTitle.value, createTodo.value); createTitle.value = ''; createTodo.value = ''">Add</button>
+        </div>
+        <div class="col-sm-6">
+            <div class="drop-box rounded w-100 p-3 h-100 d-inline-block text-center">
+                <h1 class="text-dark">Drop Box</h1>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Completed?</th>
+                    <th scope="col">&#10006; / &#10004;</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of todoList">
+                    <td>
+                        <h6><b>{{ todo.task }}</b></h6>
+                        {{ todo.description }}
+                    </td>
+                    <td>{{ todo.complete ? "Yes" : "No" }}</td>
+                    <td>
+                        <button type="button" class="btn btn-secondary" (click)="setNotDone(todo)">&#10006;</button>
+                        <button type="button" class="btn btn-success" (click)="setDone(todo)">&#10004;</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="delete(todo)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

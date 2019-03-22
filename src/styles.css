@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'PT Mono', monospace;
+    color: white;
+}
+
+.drop-box {
+    background-image: url("/assets/img/stripes-light.png");
+}
+
+.dark-paths {
+    background-image: url("/assets/img/dark-paths.png");
+}
+
+.dark-paths-lighter {
+    background-image: url("/assets/img/dark-paths-lighter.png");
+}
