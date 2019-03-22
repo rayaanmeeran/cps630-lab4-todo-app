@@ -1,4 +1,4 @@
-# Cps630Lab4TodoApp
+# CPS 630 Lab 4 Todo App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
