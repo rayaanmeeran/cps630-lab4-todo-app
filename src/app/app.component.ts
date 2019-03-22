@@ -10,6 +10,25 @@ export class AppComponent {
   title = 'TODO APP';
   todoList = todos.todo;
 
+  /*
+  todoList = [
+    {
+      task: "Buy Oranges",
+      complete: false,
+      description: "Buy 6 oranges from the store."
+    },
+    {
+      task: "Buy Grapes",
+      complete: false,
+      description: "Buy a pack of grapes from the store."
+    },
+    {
+      task: "Buy Apples",
+      complete: false,
+      description: "Buy 3 apples from the store."
+    }
+  ]*/
+
   addTodo(title, desc) {
     let duplicate = this.checkDuplicate(title);
     if (duplicate === true){
@@ -27,7 +46,7 @@ export class AppComponent {
 
   delete(data) {
     for(let i = 0; i < this.todoList.length; i++) {
-      if(data.title === this.todoList[i].task){
+      if(data.task === this.todoList[i].task){
         this.todoList.splice(i, 1);
         console.log("Deleted.");
         break;
@@ -50,7 +69,7 @@ export class AppComponent {
 
   setNotDone(data) { 
     for(let i = 0; i < this.todoList.length; i++) {
-      if(data.title === this.todoList[i].task){
+      if(data.task === this.todoList[i].task){
         this.todoList[i].complete = false;
         console.log("Task Not Done.");
         break;
@@ -60,7 +79,7 @@ export class AppComponent {
 
   setDone(data) { 
     for(let i = 0; i < this.todoList.length; i++) {
-      if(data.title === this.todoList[i].task){
+      if(data.task === this.todoList[i].task){
         this.todoList[i].complete = true;
         console.log("Task Done.");
         break;
