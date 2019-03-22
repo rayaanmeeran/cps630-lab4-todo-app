@@ -1,0 +1,15 @@
+{
+    "todo": [{
+        "task": "Buy Apples",
+        "complete": false,
+        "description": "Buy apples from the grocery store."
+    }, {
+        "task": "Buy Bananas",
+        "complete": false,
+        "description": "Buy bananas from the grocery store."
+    }, {
+        "task": "Finish Studying",
+        "complete": false,
+        "description": "Finish studying for the midterm."
+    }]
+}

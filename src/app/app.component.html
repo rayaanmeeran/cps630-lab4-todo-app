@@ -16,35 +16,62 @@
             <button type="submit" class="btn btn-primary" (click)="addTodo(createTitle.value, createTodo.value); createTitle.value = ''; createTodo.value = ''">Add</button>
         </div>
         <div class="col-sm-6">
-            <div class="drop-box rounded w-100 p-3 h-100 d-inline-block text-center">
-                <h1 class="text-dark">Drop Box</h1>
+            <div class="drop-box rounded w-100 p-3 h-100 d-inline-block text-center" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
+                <br>
+                <h5><b class="text-dark">Drop Box</b></h5>
+                <br>
+                <h6 class="text-dark">Drop your JSON file here.. (todo.json)</h6>
             </div>
         </div>
     </div>
 
     <div>
+        <h3>Not Completed</h3>
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
                     <th scope="col">Task</th>
                     <th scope="col">Completed?</th>
-                    <th scope="col">&#10006; / &#10004;</th>
+                    <th scope="col">&#10004;</th>
                     <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let todo of todoList">
+                <tr *ngFor="let todo of incompleteList">
                     <td>
                         <h6><b>{{ todo.task }}</b></h6>
                         {{ todo.description }}
                     </td>
                     <td>{{ todo.complete ? "Yes" : "No" }}</td>
                     <td>
-                        <button type="button" class="btn btn-secondary" (click)="setNotDone(todo)">&#10006;</button>
                         <button type="button" class="btn btn-success" (click)="setDone(todo)">&#10004;</button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger" (click)="delete(todo)">Delete</button>
+                        <button type="button" class="btn btn-danger" (click)="deleteIncomplete(todo)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Completed</h3>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Completed?</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of completedList">
+                    <td>
+                        <h6><b>{{ todo.task }}</b></h6>
+                        {{ todo.description }}
+                    </td>
+                    <td>{{ todo.complete ? "Yes" : "No" }}</td>
+                    <td>
+                        <button type="button" class="btn btn-danger" (click)="deleteComplete(todo)">Delete</button>
                     </td>
                 </tr>
             </tbody>
